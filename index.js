@@ -74,4 +74,6 @@ app.post("/order", express.json(), async function (req, res) {
     res.json('Order recieved!');
 });
 
-app.listen(3000);
+const port = process.env.PORT || 80
+
+app.listen(port);
