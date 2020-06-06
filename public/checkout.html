@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <title>Guitar Shop</title>
+  <meta name="description" content="The Guitar Shop" />
+  <meta name="author" content="SitePoint" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,900" rel="stylesheet"
+    type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="index.html"><img src="./images/logo.svg" alt="logo" />
+      <a href="cart.html">
+        <div class="button">
+          <p class="button_text">Cart</p>
+        </div>
+      </a>
+  </header>
+  <div class="form__group">
+    <input autocomplete="false" maxlength="20" type="text" class="form__input" id="phone" placeholder="your phone number"
+      required="" oninput="limit(this, this.maxlength);"/>
+    <input autocomplete="false" maxlength="50" type="text" class="form__input" id="e-mail" placeholder="e-mail address"
+      required="" oninput="limit(this, this.maxlength);"/>
+    <input autocomplete="false" maxlength="50" type="text" class="form__input" id="delivery" placeholder="delivery address"
+      required="" oninput="limit(this, this.maxlength);"/>
+  </div>
+  <div id='cart-buttons'>
+    <div class="button" onclick="sendOrder();">
+      <p class="button_text">Order up!</p>
+    </div>
+  </div>
+  <script src="js/checkout.js"></script>
+</body>
+
+</html>

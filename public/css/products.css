@@ -1,0 +1,149 @@
+.title {
+  position: absolute;
+  top: 52%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.buy {
+  position: absolute;
+  height: 54px;
+  width: 100px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #E3E7FC;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
+}
+
+.buy:active {
+  transform: scale(0.9);
+  background-color: #d7ddf8;
+}
+
+.buy_text {
+  user-select: none;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 600;
+  color: #505CE1;
+}
+
+.price {
+  position: absolute;
+  bottom: 32px;
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.card-container {
+  margin-top: 30px;
+  align-items: start;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 260px);
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card:before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  padding-bottom: 150%;
+}
+
+.card-img {
+  user-select: none;
+  position: absolute;
+  top: 0px;
+  object-fit: cover;
+  height: 50%;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  opacity: 100%;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 1000px) {
+  .card-container {
+    grid-template-columns: repeat(2, 42%);
+  }
+
+  .card:before {
+    padding-bottom: 100%;
+  }
+
+  .card:hover {
+    transform: inherit;
+    box-shadow: inherit;
+  }
+
+  .card:hover .card-img{
+    opacity: 0%;
+    pointer-events: none;
+  }
+
+  .title {
+    position: absolute;
+    top: 20px;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  .buy {
+    width: 80%;
+    height: 80px;
+    right: 50%;
+    transform: translateX(+50%);
+  }
+
+  .price {
+    position: absolute;
+    bottom: 120px;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  .card-img {
+    height: 100%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    z-index: +1;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(1, 90%);
+  }
+}

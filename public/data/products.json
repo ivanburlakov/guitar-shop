@@ -1,0 +1,101 @@
+[
+    {
+        "product_ID": 1,
+        "title": "Squier Classic Vibe 60's Telecaster Custom",
+        "price": 449,
+        "discount": 7,
+        "Photo": {
+            "path": "images/guitar1.jpg"
+        }
+    },
+    {
+        "product_ID": 2,
+        "title": "Squier Affinity Strat",
+        "price": 183,
+        "discount": 5,
+        "Photo": {
+            "path": "images/guitar2.jpg"
+        }
+    },
+    {
+        "product_ID": 3,
+        "title": "Sigma GMC-STE-BKB+",
+        "price": 498,
+        "discount": 5,
+        "Photo": {
+            "path": "images/guitar3.jpg"
+        }
+    },
+    {
+        "product_ID": 4,
+        "title": "Music Man BFR",
+        "price": 1350,
+        "discount": 0,
+        "Photo": {
+            "path": "images/guitar4.jpg"
+        }
+    },
+    {
+        "product_ID": 5,
+        "title": "PRS Silver Sky (MN)",
+        "price": 2299,
+        "discount": 10,
+        "Photo": {
+            "path": "images/guitar5.jpg"
+        }
+    },
+    {
+        "product_ID": 6,
+        "title": "PRS Silver Sky (RN)",
+        "price": 2299,
+        "discount": 10,
+        "Photo": {
+            "path": "images/guitar6.jpg"
+        }
+    },
+    {
+        "product_ID": 7,
+        "title": "PRS Custom 24",
+        "price": 900,
+        "discount": 0,
+        "Photo": {
+            "path": "images/guitar7.jpg"
+        }
+    },
+    {
+        "product_ID": 8,
+        "title": "Music Man Classic StingRay 4",
+        "price": 1100,
+        "discount": 20,
+        "Photo": {
+            "path": "images/guitar8.jpg"
+        }
+    },
+    {
+        "product_ID": 9,
+        "title": "Brian May Red Special",
+        "price": 835,
+        "discount": 0,
+        "Photo": {
+            "path": "images/guitar9.jpg"
+        }
+    },
+    {
+        "product_ID": 10,
+        "title": "Gibson 2019 Les Paul Standard Blueberry Burst",
+        "price": 2850,
+        "discount": 5,
+        "Photo": {
+            "path": "images/guitar10.jpg"
+        }
+    },
+    {
+        "product_ID": 11,
+        "title": "Fender Vintera 60s Jazzmaster Modified",
+        "price": 1100,
+        "discount": 0,
+        "Photo": {
+            "path": "images/guitar11.jpg"
+        }
+    }
+]
