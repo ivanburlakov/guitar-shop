@@ -41,11 +41,6 @@ function populateProducts(json) {
         h1.textContent = row.title;
         card.appendChild(h1);
 
-        const disc = document.createElement('p');
-        disc.classList.add('disc_price');
-        disc.textContent = parseInt(row.price * (1 - (row.discount / 100))) + '$';
-        card.appendChild(disc);
-
         const p = document.createElement('p');
         p.classList.add('price');
         p.textContent = row.price + '$';
@@ -55,7 +50,7 @@ function populateProducts(json) {
         buyDiv.classList.add('buy');
         buyDiv.onclick = () => {
             if (cart.filter(e => e.product_ID === row.product_ID).length > 0) { return }
-            cart.push({product_ID: row.product_ID, quantity: 1});
+            cart.push({ product_ID: row.product_ID, quantity: 1 });
             localStorage.setItem('cart', JSON.stringify(cart));
         };
 
@@ -70,4 +65,4 @@ function populateProducts(json) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => { loadProducts(); });
+document.addEventListener('DOMContentLoaded', () => { loadProducts() });

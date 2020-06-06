@@ -25,7 +25,11 @@ async function addOrders(uid, orders) {
         order: [['id', 'DESC']]
     });
 
-    const newOrderID = lastOrderID.order_ID + 1;
+    let newOrderID;
+
+    if (lastOrderID === null) {
+        newOrderID = 1;
+    } else { newOrderID = lastOrderID.order_ID + 1; }
 
     const orderArray = [];
 

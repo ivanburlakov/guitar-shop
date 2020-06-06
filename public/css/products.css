@@ -1,9 +1,4 @@
 .title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
   position: absolute;
   top: 52%;
   margin-top: 6px;
@@ -43,20 +38,11 @@
   color: #505CE1;
 }
 
-.disc_price {
+.price {
   position: absolute;
-  bottom: 46px;
+  bottom: 32px;
   margin-left: 20px;
   font-weight: 700;
-  font-size: 22px;
-}
-
-.price {
-  text-decoration: line-through;
-  position: absolute;
-  bottom: 18px;
-  margin-left: 20px;
-  font-weight: 500;
   font-size: 22px;
 }
 
@@ -136,17 +122,15 @@
   .buy {
     width: 80%;
     height: 80px;
-    left: 50%;
-    margin-left: -40%;
-  }
-
-  .disc_price {
-    bottom: 144px;
-    font-size: 32px;
+    right: 50%;
+    transform: translateX(+50%);
   }
 
   .price {
-    bottom: 117px;
+    position: absolute;
+    bottom: 120px;
+    margin-left: 20px;
+    font-weight: 600;
     font-size: 32px;
   }
 

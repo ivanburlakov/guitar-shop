@@ -1,4 +1,4 @@
-let cart = JSON.parse(localStorage.getItem('cart'));
+const cart = JSON.parse(localStorage.getItem('cart'));
 
 function limit(element, max_chars) {
     if (element.value.length > max_chars) {
@@ -6,9 +6,9 @@ function limit(element, max_chars) {
     }
 }
 
-let phone = document.getElementById('phone');
-let email = document.getElementById('e-mail');
-let delivery = document.getElementById('delivery');
+const phone = document.getElementById('phone');
+const email = document.getElementById('e-mail');
+const delivery = document.getElementById('delivery');
 
 function sendOrder() {
     if (phone.value != "" && email.value != "" && delivery.value != "" && cart != null) {
@@ -17,10 +17,10 @@ function sendOrder() {
             email: encodeURIComponent(email.value)
         }
 
-        let orders = [];
+        const orders = [];
 
         cart.forEach((e) => {
-            let order = {
+            const order = {
                 product_ID: parseInt(e.product_ID),
                 quantity: parseInt(e.quantity),
                 delivery: encodeURIComponent(delivery.value)
@@ -30,19 +30,24 @@ function sendOrder() {
         });
 
         const request = new XMLHttpRequest();
-        request.open("POST", "./data/order.php");
-        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.open("POST", '/order');
+        request.setRequestHeader("Content-Type", "application/json");
         request.onreadystatechange = function () {
             if (this.readyState === 4 || this.status === 200) {
                 console.log(this.response);
             }
-        };
+        }
 
-        request.send("userData=" + JSON.stringify(user) + "&orderData=" + JSON.stringify(orders));
+        const message = {
+            "user": user,
+            "order": orders
+        }
+        
+        request.send(JSON.stringify(message));
 
         localStorage.removeItem('cart');
 
-        window.location.href = "/guitar_shop/index.html";
+        window.location.href = "/index.html";
 
     } else { console.log('Order details are empty!!') }
 }
