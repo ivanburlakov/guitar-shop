@@ -1,0 +1,11 @@
+{
+    "db": {
+      "username": "eDUaamf0ic",
+      "password": "qwerty234base",
+      "database": "eDUaamf0ic",
+      "host": "remotemysql.com",
+      "port": "3306",
+      "dialect": "mysql",
+      "operatorsAliases": false
+    }
+  }
