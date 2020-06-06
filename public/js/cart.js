@@ -54,7 +54,7 @@ function populateCart(json) {
             card.classList.add('card');
 
             const img = document.createElement('img');
-            img.srcset = row.Photo.path;
+            img.srcset = row.path;
             img.classList.add('card-img');
             card.appendChild(img);
 
@@ -66,10 +66,10 @@ function populateCart(json) {
             h1.textContent = row.title;
             info.appendChild(h1);
 
-            const p = document.createElement('p');
-            p.classList.add('price');
-            p.textContent = row.price + '$';
-            info.appendChild(p);
+            const disc = document.createElement('p');
+            disc.classList.add('disc_price');
+            disc.textContent = parseInt(row.price * (1 - (row.discount / 100))) + '$';
+            info.appendChild(disc);
 
             const input = document.createElement('input');
             input.type = 'number';
@@ -78,7 +78,7 @@ function populateCart(json) {
             input.inputmode = 'numeric';
             input.min = '1';
             input.max = '100';
-            input.oninput = function() {
+            input.oninput = function () {
                 if (parseInt(this.value) > parseInt(this.max)) {
                     this.value = this.max;
                 }

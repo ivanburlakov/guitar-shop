@@ -17,6 +17,11 @@
 }
 
 .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  -webkit-box-orient: vertical;
   position: relative;
   top: 10px;
   margin-left: 20px;
@@ -63,7 +68,7 @@
   color: #505CE1;
 }
 
-.price {
+.disc_price {
   position: relative;
   margin-top: 10px;
   margin-left: 20px;

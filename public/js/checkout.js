@@ -1,4 +1,4 @@
-const cart = JSON.parse(localStorage.getItem('cart'));
+let cart = JSON.parse(localStorage.getItem('cart'));
 
 function limit(element, max_chars) {
     if (element.value.length > max_chars) {
@@ -6,9 +6,9 @@ function limit(element, max_chars) {
     }
 }
 
-const phone = document.getElementById('phone');
-const email = document.getElementById('e-mail');
-const delivery = document.getElementById('delivery');
+let phone = document.getElementById('phone');
+let email = document.getElementById('e-mail');
+let delivery = document.getElementById('delivery');
 
 function sendOrder() {
     if (phone.value != "" && email.value != "" && delivery.value != "" && cart != null) {
@@ -17,10 +17,10 @@ function sendOrder() {
             email: encodeURIComponent(email.value)
         }
 
-        const orders = [];
+        let orders = [];
 
         cart.forEach((e) => {
-            const order = {
+            let order = {
                 product_ID: parseInt(e.product_ID),
                 quantity: parseInt(e.quantity),
                 delivery: encodeURIComponent(delivery.value)
@@ -30,24 +30,19 @@ function sendOrder() {
         });
 
         const request = new XMLHttpRequest();
-        request.open("POST", '/order');
-        request.setRequestHeader("Content-Type", "application/json");
+        request.open("POST", "./data/order.php");
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         request.onreadystatechange = function () {
             if (this.readyState === 4 || this.status === 200) {
                 console.log(this.response);
             }
-        }
+        };
 
-        const message = {
-            "user": user,
-            "order": orders
-        }
-        
-        request.send(JSON.stringify(message));
+        request.send("userData=" + JSON.stringify(user) + "&orderData=" + JSON.stringify(orders));
 
         localStorage.removeItem('cart');
 
-        window.location.href = "/index.html";
+        window.location.href = "/guitar_shop/index.html";
 
     } else { console.log('Order details are empty!!') }
 }
