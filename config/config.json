@@ -5,7 +5,6 @@
         "database": "eDUaamf0ic",
         "host": "remotemysql.com",
         "port": "3306",
-        "dialect": "mysql",
-        "operatorsAliases": false
+        "dialect": "mysql"
     }
 }
