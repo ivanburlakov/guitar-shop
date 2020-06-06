@@ -1,8 +1,10 @@
 const Sequelize = require('sequelize');
+const config = require('../config/config.json')
 
-const sequelize = new Sequelize('guitar_shop', 'root', 'Tiboshi1423', {
-  host: 'localhost',
-  dialect: 'mysql'
+const sequelize = new Sequelize(config.db.database, config.db.username, config.db.passsword, {
+  host: config.db.host,
+  port: config.db.port,
+  dialect: config.db.dialect
 });
 
 const Model = Sequelize.Model;

@@ -1,17 +1,10 @@
 {
-  "users": {
-    "username": "root",
-    "password": "Tiboshi1423",
-    "database": "users",
-    "host": "localhost",
-    "dialect": "mysql",
-    "operatorsAliases": false
-  },
-  "guitar_shop": {
-    "username": "root",
-    "password": "Tiboshi1423",
-    "database": "guitar_shop",
-    "host": "localhost",
+  "db": {
+    "username": "eDUaamf0ic",
+    "password": "LTWneLyi0K",
+    "database": "eDUaamf0ic",
+    "host": "remotemysql.com",
+    "port": "3306",
     "dialect": "mysql",
     "operatorsAliases": false
   }
