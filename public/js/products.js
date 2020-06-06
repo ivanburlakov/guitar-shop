@@ -32,7 +32,7 @@ function populateProducts(json) {
         card.classList.add('card');
 
         const img = document.createElement('img');
-        img.srcset = row.path;
+        img.srcset = row.Photo.path;
         img.classList.add('card-img');
         card.appendChild(img);
 
