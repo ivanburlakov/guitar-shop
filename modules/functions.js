@@ -1,33 +1,15 @@
 const Users = require('../models/users.js');
 const Orders = require('../models/orders.js');
 
-async function getUserID(user) {
+async function getUserID(userData) {
     try {
-        let uid = await Users.findOne({
-            attributes: ['user_ID'],
-            where: {
-                email: user.email,
-                phone: user.phone
-            }
-        });
-
-        if (uid === null) {
-            await Users.create({
-                email: user.email,
-                phone: user.phone
-            });
-
-            uid = await Users.findOne({
-                attributes: ['user_ID'],
-                where: {
-                    email: user.email,
-                    phone: user.phone
-                }
-            });
-        }
-
-        return uid.user_ID;
-        
+        const { email, phone } = userData;
+        const where = { email, phone };
+        const attributes = ['user_ID'];
+        let user = await Users.findOne({ attributes, where });
+        if (user) return user.user_ID;
+        user = await Users.create(where);
+        return user.user_ID;
     } catch (err) {
         console.error('Unable to get user id: ', err);
     }
